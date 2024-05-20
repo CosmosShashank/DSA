@@ -1,0 +1,18 @@
+// This solution is space optimized as only two varialble has been used to store the last two value required to calculate the next value.
+public class Solution {
+    public int Fib(int n) {
+     if(n < 2) //Base Condition 
+     return n;
+    
+    int a=0,b=1,c=0; 
+
+    for(int i = 2;i < n+1;i++)
+    {
+        c = a+b;
+        a=b; 
+        b=c;
+    }
+     return c;
+    }
+     
+}
