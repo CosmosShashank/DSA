@@ -1,1 +1,39 @@
+// Solution with array
 
+public class Solution {
+    public int ClimbStairs(int n) {
+      
+        int[] stairs =new int[n+1];
+            stairs[0]=1;    
+            stairs[1]=1;
+        for (int i=2;i<=n;i++)
+        {
+         
+            stairs[i]= stairs[i-1]+stairs[i-2];
+        }
+        return stairs[n];
+    }
+}
+
+
+
+// Optimised Solution 
+
+public class Solution {
+    public int ClimbStairs(int n) {
+      
+      if(n ==1 ) return n; // handle special senarios 
+      
+            int r=0; // result vaiable
+            int f=1; // first    
+            int s=1; // Second
+        for (int i=2;i<=n;i++)
+        {
+         
+            r = s+f;
+            f=s;
+            s=r;
+        }
+        return r;
+    }
+}
